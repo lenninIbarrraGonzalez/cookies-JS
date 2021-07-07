@@ -50,6 +50,13 @@
           return " ";
         }
       }
+    
+      //Borrar cookie
+      function deleteCookie(nombre){
+        //nombre de la cookie+ vacio + 0 *24*60*60*1000 
+        //coloca la fecha mas pequeña 1 de enero 1970 
+        setCookie(nombre,"",0);
+      }
     </script>
 
 </body>
