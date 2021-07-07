@@ -25,6 +25,31 @@
         document.cookie = nombre+"="+valor+";"+expiracion+";path=/";
       }
 
+      //Leer una cookie
+      function getCookie(nombre){
+        //le concatenamos el igual al nombre que recibimos por parametro
+        var nom = nombre+"=";
+        //creamos un array - separdo por split(;)
+        var array = document.cookie.split(";");
+        //recorremos el array
+        for(var i=0; i<array.length; i++){
+          //capturamos lo elementos del array
+          var c = array[i];
+          //vamos extrayendo el caracter 0 hasta que sea diferente de vacio
+          while(c.charAt(0)==" "){
+            //vamos guardando 
+            c= c.substring(1);
+          }
+          //comparamos lo que tiene guardado c con el valor nombre
+          // c = nombre=lennin 
+          //indexOf busca la cadena en c
+          if(c.indexOf(nombre)==0){
+            return c.substring(nom.length, c.length);
+          }
+          //si no encuentra nada retorna vacio
+          return " ";
+        }
+      }
     </script>
 
 </body>
