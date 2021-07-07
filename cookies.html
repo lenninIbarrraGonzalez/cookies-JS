@@ -14,7 +14,17 @@
     <button type="button" id="borrarCookie">Borrar cookie</button>
 
     <script>
-      
+      //crear o modificar una cookie
+      function setCookie(nombre, valor, expiracion){
+        //capturando la fecha actual
+        var d = new Date();
+        //modificar la fecha
+        d.setTime(d.getTime()+expiracion*24*60*60*1000);
+        //creando expiracion como lo requiere la cookie
+        var expiracion = "expires="+d.toUTCString();
+        document.cookie = nombre+"="+valor+";"+expiracion+";path=/";
+      }
+
     </script>
 
 </body>
